@@ -6,6 +6,7 @@ import MobileNav from './mobile-nav'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { Sun, Moon } from 'lucide-react'
+import AuthButton from '@/components/ui/auth-button'
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false)
@@ -22,6 +23,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <header className="h-14 border-b px-4 flex items-center justify-between lg:h-16">
         <h1 className="text-lg font-semibold">Focusflow</h1>
         <div className="flex items-center gap-2">
+          <AuthButton />
           {mounted && (
             <Button
               variant="ghost"
